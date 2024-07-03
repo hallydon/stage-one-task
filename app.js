@@ -10,6 +10,7 @@ app.get('/api/hello', async (req, res) => {
     let location = 'Unknown';
     let temperature = 'Unknown';
     try {
+    
         const locationResponse = await axios.get(`http://ipinfo.io/${clientIp}/json?token=e05d8cafc359e3`);
         location = locationResponse.data.city || 'Unknown';
 
