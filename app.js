@@ -17,7 +17,7 @@ app.get('/api/hello', async (req, res) => {
         // location = locationResponse.data.city || 'Unknown';
 
         if (location !== 'Unknown') {
-            const apiKey = 'c581371dfbe5dc70c0fa3e48da2ff3be';
+            const apiKey = process.env.WEATHER_API_KEY || 'c581371dfbe5dc70c0fa3e48da2ff3be';
             const weatherResponse = await axios.get(`http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${location}`);
             temperature = weatherResponse.data.current.temp_c || 'Unknown';
             // const weatherResponse = await axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=c581371dfbe5dc70c0fa3e48da2ff3be`);
