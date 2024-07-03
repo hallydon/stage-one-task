@@ -4,7 +4,7 @@ const axios = require('axios');
 
 app.get('/api/hello', async (req, res) => {
     const visitorName = req.query.visitor_name || 'Guest';
-    const clientIp = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
+    const clientIp = req.headers['x-real-ip'] || req.headers['x-forwarded-for'] || req.socket.remoteAddress;
     
     
     let location = 'Unknown';
