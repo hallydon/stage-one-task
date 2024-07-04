@@ -16,7 +16,7 @@ app.get('/api/hello', async (req, res) => {
         location = locationResponse.data.city || 'Unknown';
         console.log(location);
     
-       
+
 
         if (location !== 'Unknown') {
             const apiKey = process.env.WEATHER_API_KEY || 'c581371dfbe5dc70c0fa3e48da2ff3be';
@@ -42,3 +42,4 @@ const port = process.env.port || 3000;
 app.listen(port, () => {
     console.log(`server is running at http://localhost:${port}`);
 });
+module.exports = app;
