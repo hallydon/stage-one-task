@@ -20,7 +20,7 @@ app.get('/api/hello', async (req, res) => {
 
         if (location !== 'Unknown') {
             const apiKey = process.env.WEATHER_API_KEY || 'c581371dfbe5dc70c0fa3e48da2ff3be';
-            const weatherResponse = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}`);
+            const weatherResponse = await axios.get(`https://api.openweathermap.org/data/2.5/weather?&units=metricq=${location}&appid=${apiKey}`);
             console.log(weatherResponse);
             temperature = weatherResponse.data.main.temp || 'Unknown';
             
